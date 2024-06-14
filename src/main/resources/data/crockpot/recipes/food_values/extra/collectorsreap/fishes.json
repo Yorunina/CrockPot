@@ -5,19 +5,19 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "miners_delight"
+          "modid": "collectorsreap"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "miners_delight:squid",
-          "miners_delight:glow_squid",
-          "miners_delight:baked_squid"
+          "collectorsreap:clam",
+          "collectorsreap:cooked_tiger_prawn",
+          "collectorsreap:cooked_tiger_prawn",
+          "collectorsreap:tiger_prawn"
         ],
         "values": {
-          "FISH": 1,
-          "MEAT": 0.5
+          "FISH": 1
         }
       }
     }

@@ -5,19 +5,17 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "miners_delight"
+          "modid": "alexscaves"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "miners_delight:squid",
-          "miners_delight:glow_squid",
-          "miners_delight:baked_squid"
+          "alexscaves:dinosaur_chop",
+          "alexscaves:cooked_dinosaur_chop"
         ],
         "values": {
-          "FISH": 1,
-          "MEAT": 0.5
+          "MEAT": 3
         }
       }
     }

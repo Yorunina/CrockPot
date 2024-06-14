@@ -5,17 +5,16 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "dropthemeat"
+          "modid": "blue_skies"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "dropthemeat:cooked_squid",
-          "dropthemeat:raw_squid"
+          "blue_skies:crescent_fruit"
         ],
         "values": {
-          "FISH": 0.5
+          "FRUIT": 1
         }
       }
     }

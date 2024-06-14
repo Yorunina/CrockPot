@@ -5,19 +5,17 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "miners_delight"
+          "modid": "twilightforest"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "miners_delight:squid",
-          "miners_delight:glow_squid",
-          "miners_delight:baked_squid"
+          "twilightforest:mushgloom_colony"
         ],
         "values": {
-          "FISH": 1,
-          "MEAT": 0.5
+          "VEGGIE": 1,
+          "INEDIBLE": 1
         }
       }
     }

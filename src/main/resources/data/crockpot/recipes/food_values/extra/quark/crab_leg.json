@@ -15,8 +15,8 @@
           "quark:cooked_crab_leg"
         ],
         "values": {
-          "FISH": 0.5,
-          "MEAT": 1
+          "FISH": 1,
+          "MEAT": 0.5
         }
       }
     }

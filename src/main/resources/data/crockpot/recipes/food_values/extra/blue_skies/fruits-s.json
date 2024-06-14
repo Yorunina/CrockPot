@@ -5,19 +5,20 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "miners_delight"
+          "modid": "blue_skies"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "miners_delight:squid",
-          "miners_delight:glow_squid",
-          "miners_delight:baked_squid"
+          "blue_skies:black_brewberry",
+          "blue_skies:brewberry",
+          "blue_skies:comet_berries",
+          "blue_skies:cherry",
+          "blue_skies:pink_brewberry"
         ],
         "values": {
-          "FISH": 1,
-          "MEAT": 0.5
+          "FRUIT": 0.5
         }
       }
     }

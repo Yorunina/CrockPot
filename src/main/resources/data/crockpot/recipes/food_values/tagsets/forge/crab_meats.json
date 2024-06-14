@@ -1,9 +1,10 @@
 {
   "type": "crockpot:food_values",
   "tags": [
-    "forge:rods/wooden"
+    "forge:crab_meats"
   ],
   "values": {
-    "INEDIBLE": 1
+    "FISH": 0.5,
+    "MEAT": 0.5
   }
 }

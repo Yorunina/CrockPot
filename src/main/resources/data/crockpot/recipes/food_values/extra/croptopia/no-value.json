@@ -5,17 +5,19 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "alexsmobs"
+          "modid": "croptopia"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "alexsmobs:crocodile_egg"
+          "croptopia:almond",
+          "croptopia:cashew",
+          "croptopia:pecan",
+          "croptopia:soybean",
+          "croptopia:walnut"
         ],
-        "values": {
-          "EGG": 2
-        }
+        "values": {}
       }
     }
   ]

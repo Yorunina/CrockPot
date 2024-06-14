@@ -14,7 +14,8 @@
           "twilightdelight:experiment_113"
         ],
         "values": {
-          "MEAT": 1
+          "MEAT": 1,
+          "MONSTER": 1
         }
       }
     }

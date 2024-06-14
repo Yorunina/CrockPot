@@ -5,19 +5,17 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "miners_delight"
+          "modid": "ends_delight"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "miners_delight:squid",
-          "miners_delight:glow_squid",
-          "miners_delight:baked_squid"
+          "ends_delight:raw_dragon_meat_cuts",
+          "ends_delight:roasted_dragon_meat_cuts"
         ],
         "values": {
-          "FISH": 1,
-          "MEAT": 0.5
+          "MEAT": 1
         }
       }
     }

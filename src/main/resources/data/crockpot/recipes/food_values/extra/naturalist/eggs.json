@@ -5,18 +5,17 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "alexsmobs"
+          "modid": "naturalist"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "alexsmobs:lobster_tail",
-          "alexsmobs:cooked_lobster_tail"
+          "naturalist:alligator_egg",
+          "naturalist:tortoise_egg"
         ],
         "values": {
-          "FISH": 1,
-          "MEAT": 1
+          "EGG": 1
         }
       }
     }

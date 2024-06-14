@@ -12,15 +12,19 @@
         "type": "crockpot:food_values",
         "items": [
           "dropthemeat:cooked_bear",
-          "dropthemeat:raw_bear",
-          "dropthemeat:cooked_villager",
-          "dropthemeat:raw_villager",
-          "dropthemeat:cooked_iron_golem",
-          "dropthemeat:raw_iron_golem",
-          "dropthemeat:cooked_piglin_porkchop",
-          "dropthemeat:piglin_porkchop",
+          "dropthemeat:cooked_camel",
           "dropthemeat:cooked_horse",
-          "dropthemeat:raw_horse"
+          "dropthemeat:cooked_iron_golem",
+          "dropthemeat:cooked_piglin_porkchop",
+          "dropthemeat:cooked_sniffer",
+          "dropthemeat:cooked_villager",
+          "dropthemeat:piglin_porkchop",
+          "dropthemeat:raw_bear",
+          "dropthemeat:raw_camel",
+          "dropthemeat:raw_horse",
+          "dropthemeat:raw_iron_golem",
+          "dropthemeat:raw_sniffer",
+          "dropthemeat:raw_villager"
         ],
         "values": {
           "MEAT": 1

@@ -5,18 +5,19 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "croptopia"
+          "modid": "collectorsreap"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "croptopia:almond",
-          "croptopia:cashew",
-          "croptopia:pecan",
-          "croptopia:walnut"
+          "collectorsreap:platinum_bass",
+          "collectorsreap:cooked_platinum"
         ],
-        "values": {}
+        "values": {
+          "FISH": 1,
+          "MEAT": 1
+        }
       }
     }
   ]
