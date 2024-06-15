@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:copper_block"
+    "tag": "forge:storage_blocks/copper"
   },
   "base": {
     "item": "crockpot:crock_pot"

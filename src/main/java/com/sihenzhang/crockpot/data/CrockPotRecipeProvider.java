@@ -44,7 +44,7 @@ public class CrockPotRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.STONE), has(Items.STONE))
                 .unlockedBy("has_coal", has(ItemTags.COALS))
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("crafting", CrockPotItems.CROCK_POT.get()));
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get()), Ingredient.of(CrockPotItems.CROCK_POT.get()), Ingredient.of(Items.COPPER_BLOCK), RecipeCategory.MISC, CrockPotItems.PORTABLE_CROCK_POT.get())
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get()), Ingredient.of(CrockPotItems.CROCK_POT.get()), Ingredient.of(Tags.Items.STORAGE_BLOCKS_COPPER), RecipeCategory.MISC, CrockPotItems.PORTABLE_CROCK_POT.get())
                 .unlocks(getHasName(CrockPotItems.CROCK_POT.get()), has(CrockPotItems.CROCK_POT.get()))
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("smithing", CrockPotItems.PORTABLE_CROCK_POT.get()));
 
@@ -57,6 +57,16 @@ public class CrockPotRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_gold_ingots", has(Tags.Items.INGOTS_GOLD))
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("crafting", CrockPotItems.BIRDCAGE.get()));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get(), 2)
+                .define('G', Tags.Items.INGOTS_GOLD)
+                .define('S', CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get())
+                .define('C', Tags.Items.STORAGE_BLOCKS_COPPER)
+                .pattern("GSG")
+                .pattern("GCG")
+                .pattern("GGG")
+                .unlockedBy(getHasName(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get()), has(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get()))
+                .save(pFinishedRecipeConsumer, getSimpleRecipeName("crafting", CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get()));
+
         ExplosionCraftingRecipeBuilder.explosionCrafting(CrockPotItems.BLACKSTONE_DUST.get(), Ingredient.of(Items.BLACKSTONE)).lossRate(0.75F).onlyBlock()
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("explosion_crafting", CrockPotItems.BLACKSTONE_DUST.get()));
 
@@ -64,7 +74,7 @@ public class CrockPotRecipeProvider extends RecipeProvider {
                 .requires(Tags.Items.GEMS_QUARTZ)
                 .requires(CrockPotItems.BLACKSTONE_DUST.get(), 2)
                 .requires(Tags.Items.DUSTS_GLOWSTONE)
-                .unlockedBy(getHasName(CrockPotItems.BLACKSTONE_DUST.get()), has(Tags.Items.GEMS_QUARTZ))
+                .unlockedBy(getHasName(CrockPotItems.BLACKSTONE_DUST.get()), has(CrockPotItems.BLACKSTONE_DUST.get()))
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("crafting", CrockPotItems.COLLECTED_DUST.get()));
 
         var cookingRecipes = Map.of(
@@ -125,7 +135,7 @@ public class CrockPotRecipeProvider extends RecipeProvider {
                 .addResult(Items.BLAZE_POWDER, 2, 3, 15)
                 .addResult(Items.ENDER_PEARL, 2, 3, 15)
                 .addResult(Items.GHAST_TEAR, 15)
-                .addResult(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get(), 15)
+                .addResult(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 15)
                 .addResult(Items.BROWN_MUSHROOM, 2, 4, 6)
                 .addResult(Items.RED_MUSHROOM, 2, 4, 6)
                 .addResult(Items.CRIMSON_FUNGUS, 2, 4, 6)
