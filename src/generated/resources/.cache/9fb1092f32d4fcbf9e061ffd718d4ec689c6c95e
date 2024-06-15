@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-31T22:52:34.9048814	Recipes
+// 1.20.1	2024-06-15T21:08:10.0311014	Recipes
 067926577a976b8950f6d20cf4a6dccf225a8650 data/crockpot/advancements/recipes/food/campfire_cooking/cooked_egg.json
 2643ab1195cf44ddf17436324524e76b1ce7d6d0 data/crockpot/advancements/recipes/food/campfire_cooking/cooked_eggplant.json
 9e986efe7a356f3980a40472e5a1d7d619a884cb data/crockpot/advancements/recipes/food/campfire_cooking/cooked_egg_by_parrot_eggs.json
@@ -112,7 +112,7 @@ fa257c19305240b6917a06bef4f321e6061e42d8 data/crockpot/recipes/parrot_feeding/pe
 51476083bf7b5e1478d344e18d5a27129d474cc9 data/crockpot/recipes/parrot_feeding/pumpkin_seeds.json
 84a5246e3a95e8cd3df583cb4eb011094b601a7d data/crockpot/recipes/parrot_feeding/tomato_seeds.json
 832876aed1c753f43cf12ffcc271866bedea0df5 data/crockpot/recipes/parrot_feeding/wheat_seeds.json
-a6550228ca162a58be0925e349160f0d9214cc95 data/crockpot/recipes/piglin_bartering/netherosia.json
+dcf65b766638bb4ab89ed76a444d1403d9be63e7 data/crockpot/recipes/piglin_bartering/netherosia.json
 3a69a71298ca09f86378b267c0fc1e87f331e9d9 data/crockpot/recipes/smelting/cooked_egg.json
 d719592b613e61e11d092b263a76b3877bf9f12f data/crockpot/recipes/smelting/cooked_eggplant.json
 79166881d2ab34631465de388b40389c79a48dad data/crockpot/recipes/smelting/cooked_egg_by_parrot_eggs.json

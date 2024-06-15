@@ -125,7 +125,7 @@ public class CrockPotRecipeProvider extends RecipeProvider {
                 .addResult(Items.BLAZE_POWDER, 2, 3, 15)
                 .addResult(Items.ENDER_PEARL, 2, 3, 15)
                 .addResult(Items.GHAST_TEAR, 15)
-                .addResult(Items.NETHERITE_SCRAP, 1, 5, 15)
+                .addResult(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get(), 15)
                 .addResult(Items.BROWN_MUSHROOM, 2, 4, 6)
                 .addResult(Items.RED_MUSHROOM, 2, 4, 6)
                 .addResult(Items.CRIMSON_FUNGUS, 2, 4, 6)

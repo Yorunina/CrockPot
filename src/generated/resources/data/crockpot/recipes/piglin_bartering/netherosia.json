@@ -73,11 +73,7 @@
       "weight": 15
     },
     {
-      "count": {
-        "max": 5,
-        "min": 1
-      },
-      "item": "minecraft:netherite_scrap",
+      "item": "crockpot:pot_upgrade_smithing_template",
       "weight": 15
     },
     {

@@ -78,10 +78,6 @@ public class CrockPotAdvancementProvider extends ForgeAdvancementProvider {
                     .requirements(RequirementsStrategy.OR)
                     .save(consumer, getSimpleAdvancementName("piglin_bartering"));
             Advancement.Builder.advancement().parent(piglinBartering)
-                    .display(Items.NETHERITE_SCRAP, getTranslatableAdvancementTitle("netherite_scrap"), getTranslatableAdvancementDescription("netherite_scrap"), null, FrameType.TASK, true, true, false)
-                    .addCriterion(getItemName(Items.NETHERITE_SCRAP), new PiglinBarteringTrigger.Instance(ContextAwarePredicate.ANY, ItemPredicate.Builder.item().of(Items.NETHERITE_SCRAP).build()))
-                    .save(consumer, getSimpleAdvancementName("netherite_scrap"));
-            Advancement.Builder.advancement().parent(piglinBartering)
                     .display(Items.WITHER_SKELETON_SKULL, getTranslatableAdvancementTitle("wither_skeleton_skull"), getTranslatableAdvancementDescription("wither_skeleton_skull"), null, FrameType.CHALLENGE, true, true, true)
                     .addCriterion(getItemName(Items.WITHER_SKELETON_SKULL), new PiglinBarteringTrigger.Instance(ContextAwarePredicate.ANY, ItemPredicate.Builder.item().of(Items.WITHER_SKELETON_SKULL).build()))
                     .rewards(AdvancementRewards.Builder.experience(50))
