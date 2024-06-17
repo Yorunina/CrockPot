@@ -11,12 +11,11 @@
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "collectorsreap:platinum_bass_slice",
-          "collectorsreap:cooked_platinum_bass_slice"
+          "collectorsreap:pomegranate_slice",
+          "collectorsreap:lime_slice"
         ],
         "values": {
-          "FISH": 0.5,
-          "MEAT": 0.5
+          "FRUIT": 0.5
         }
       }
     }

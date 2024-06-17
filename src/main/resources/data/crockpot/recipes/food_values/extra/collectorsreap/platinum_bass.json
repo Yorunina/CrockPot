@@ -12,7 +12,7 @@
         "type": "crockpot:food_values",
         "items": [
           "collectorsreap:platinum_bass",
-          "collectorsreap:cooked_platinum"
+          "collectorsreap:cooked_platinum_bass"
         ],
         "values": {
           "FISH": 1,

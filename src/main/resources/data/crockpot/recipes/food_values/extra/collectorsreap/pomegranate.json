@@ -5,13 +5,13 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "quark"
+          "modid": "collectorsreap"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "quark:ancient_fruit"
+          "collectorsreap:pomegranate"
         ],
         "values": {
           "FRUIT": 1

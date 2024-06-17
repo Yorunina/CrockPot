@@ -17,7 +17,7 @@
           "fruitsdelight:pineapple_slice"
         ],
         "values": {
-          "FRUIT": 1
+          "FRUIT": 0.5
         }
       }
     }
