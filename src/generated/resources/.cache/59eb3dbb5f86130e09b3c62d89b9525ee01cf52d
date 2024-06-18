@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-28T23:03:51.41134	Loot Tables
+// 1.20.1	2024-06-18T22:53:56.402982	Loot Tables
 b1e3cc9a4c55ffbff5e956c3e7f0cdec5e6520bd data/crockpot/loot_tables/blocks/asparaguses.json
 a7146e6e3f142b9d8f84dc9471bb33b24ee31449 data/crockpot/loot_tables/blocks/asparagus_soup.json
 4471fce03d0edbab411687a51ede0a3783eb32b3 data/crockpot/loot_tables/blocks/avaj.json
@@ -11,7 +11,7 @@ bbe8f9e4454b40a89c92de57d57c33985db70342 data/crockpot/loot_tables/blocks/bunny_
 20dc7b393a8a23032bd422351194e105bbf681cb data/crockpot/loot_tables/blocks/california_roll.json
 7af137fe216eb09e94250a63883b2d3581591bdf data/crockpot/loot_tables/blocks/candy.json
 a4926db66d605cb8283858a6331539e34b40a51b data/crockpot/loot_tables/blocks/ceviche.json
-fd6cb0014971ef3f9660d4bd0316be57447d78e7 data/crockpot/loot_tables/blocks/crock_pot.json
+7675bd03e5dac0f054a758c1003918f117f5842e data/crockpot/loot_tables/blocks/crock_pot.json
 6ac677e4a7237762767ebc56abd2f2a1a5d75f37 data/crockpot/loot_tables/blocks/eggplants.json
 ed606322e3d8fd925ca4e48ed2905d30862bdc3f data/crockpot/loot_tables/blocks/fish_sticks.json
 120f6d06fda093489882b0404fd2b7909e7df052 data/crockpot/loot_tables/blocks/fish_tacos.json

@@ -16,6 +16,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -49,7 +50,7 @@ public class CrockPotLootTableProvider extends LootTableProvider {
     public static class CrockPotBlockLoot extends VanillaBlockLoot {
         @Override
         protected void generate() {
-            this.dropSelf(CrockPotBlocks.CROCK_POT.get());
+            this.add(CrockPotBlocks.CROCK_POT.get(), this.createSingleItemTableWithSilkTouch(CrockPotBlocks.CROCK_POT.get(), Blocks.STONE, ConstantValue.exactly(6.0F)));
             this.dropSelf(CrockPotBlocks.PORTABLE_CROCK_POT.get());
             this.add(CrockPotBlocks.BIRDCAGE.get(), createDoorTable(CrockPotBlocks.BIRDCAGE.get()));
             this.dropSelf(CrockPotBlocks.UNKNOWN_CROPS.get());
