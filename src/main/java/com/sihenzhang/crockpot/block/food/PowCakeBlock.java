@@ -31,6 +31,11 @@ public class PowCakeBlock extends CrockPotFoodBlock {
         }
 
         @Override
+        public double acceptedDistance() {
+            return 1.14;
+        }
+
+        @Override
         protected BlockPos getMoveToTarget() {
             return blockPos;
         }
