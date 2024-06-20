@@ -1,0 +1,13 @@
+{
+  "type": "crockpot:parrot_feeding",
+  "ingredient": {
+    "item": "minecraft:torchflower"
+  },
+  "result": {
+    "count": {
+      "max": 2,
+      "min": 1
+    },
+    "item": "minecraft:torchflower_seeds"
+  }
+}
