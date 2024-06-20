@@ -5,17 +5,17 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "caupona"
+          "modid": "delightful"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "caupona:fig",
-          "caupona:wolfberries"
+          "delightful:cantaloupe",
+          "delightful:mini_melon"
         ],
         "values": {
-          "FRUIT": 0.5
+          "FRUIT": 1
         }
       }
     }

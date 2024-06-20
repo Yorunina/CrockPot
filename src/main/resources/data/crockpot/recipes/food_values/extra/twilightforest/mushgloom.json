@@ -14,8 +14,7 @@
           "twilightforest:mushgloom"
         ],
         "values": {
-          "VEGGIE": 0.5,
-          "INEDIBLE": 1
+          "VEGGIE": 0.5
         }
       }
     }

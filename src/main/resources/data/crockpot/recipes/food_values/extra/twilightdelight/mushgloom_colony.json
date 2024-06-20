@@ -5,17 +5,16 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "twilightforest"
+          "modid": "twilightdelight"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "twilightforest:mushgloom_colony"
+          "twilightdelight:mushgloom_colony"
         ],
         "values": {
-          "VEGGIE": 1,
-          "INEDIBLE": 1
+          "VEGGIE": 1
         }
       }
     }

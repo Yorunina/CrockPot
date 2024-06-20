@@ -5,17 +5,17 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "caupona"
+          "modid": "undergarden"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "caupona:fig",
-          "caupona:wolfberries"
+          "undergarden:glitterkelp"
         ],
         "values": {
-          "FRUIT": 0.5
+          "VEGGIE": 0.5,
+          "INEDIBLE": 0.5
         }
       }
     }

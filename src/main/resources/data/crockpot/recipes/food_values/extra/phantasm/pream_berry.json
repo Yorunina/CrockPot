@@ -5,14 +5,13 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "caupona"
+          "modid": "phantasm"
         }
       ],
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "caupona:fig",
-          "caupona:wolfberries"
+          "phantasm:pream_berry"
         ],
         "values": {
           "FRUIT": 0.5
