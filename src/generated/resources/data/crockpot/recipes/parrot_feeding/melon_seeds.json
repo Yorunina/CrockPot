@@ -5,8 +5,8 @@
   },
   "result": {
     "count": {
-      "max": 4,
-      "min": 2
+      "max": 2,
+      "min": 1
     },
     "item": "minecraft:melon_seeds"
   }

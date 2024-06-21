@@ -101,11 +101,16 @@ public class CrockPotRecipeProvider extends RecipeProvider {
 
         var vanillaSeedsRecipes = Map.of(
                 Items.WHEAT, Items.WHEAT_SEEDS,
-                Items.BEETROOT, Items.BEETROOT_SEEDS,
-                Items.MELON_SLICE, Items.MELON_SEEDS
+                Items.BEETROOT, Items.BEETROOT_SEEDS
         );
-        vanillaSeedsRecipes.forEach((input, output) -> ParrotFeedingRecipeBuilder.parrotFeeding(Ingredient.of(input), output, 2, 4).save(pFinishedRecipeConsumer, getSimpleRecipeName("parrot_feeding", output)));
-        ParrotFeedingRecipeBuilder.parrotFeeding(Ingredient.of(Items.PUMPKIN), Items.PUMPKIN_SEEDS, 6, 8).save(pFinishedRecipeConsumer, getSimpleRecipeName("parrot_feeding", Items.PUMPKIN_SEEDS));
+        vanillaSeedsRecipes.forEach((input, output) -> ParrotFeedingRecipeBuilder.parrotFeeding(Ingredient.of(input), output, 1, 3).save(pFinishedRecipeConsumer, getSimpleRecipeName("parrot_feeding", output)));
+        ParrotFeedingRecipeBuilder.parrotFeeding(Ingredient.of(Items.PUMPKIN), Items.PUMPKIN_SEEDS, 4, 6).save(pFinishedRecipeConsumer, getSimpleRecipeName("parrot_feeding", Items.PUMPKIN_SEEDS));
+        ParrotFeedingRecipeBuilder.parrotFeeding(Ingredient.of(Items.MELON_SLICE), Items.MELON_SEEDS, 1, 2).save(pFinishedRecipeConsumer, getSimpleRecipeName("parrot_feeding", Items.MELON_SEEDS));
+        var snifferSeedsRecipes = Map.of(
+                Items.TORCHFLOWER, Items.TORCHFLOWER_SEEDS,
+                Items.PITCHER_PLANT, Items.PITCHER_POD
+        );
+        snifferSeedsRecipes.forEach((input, output) -> ParrotFeedingRecipeBuilder.parrotFeeding(Ingredient.of(input), output, 1, 2).save(pFinishedRecipeConsumer, getSimpleRecipeName("parrot_feeding", output)));
 
         var seedsRecipes = Map.of(
                 CrockPotItems.ASPARAGUS.get(), CrockPotItems.ASPARAGUS_SEEDS.get(),
