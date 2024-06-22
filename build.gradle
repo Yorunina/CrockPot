@@ -5,11 +5,13 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = mod_version
+def mod_version = "${major_version}.${minor_version}.${patch_version}"
+
+version = "${mod_version}-${version_label}"
 group = mod_group_id
 
 base {
-    archivesName = mod_id
+    archivesName = "${mod_name}-${minecraft_version}"
 }
 
 mixin {
@@ -145,10 +147,9 @@ dependencies {
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
 
-    // FIXME KubeJS has not been ported to 1.20.1 yet
-//    compileOnly fg.deobf("curse.maven:architectury-forge-419699:${architectury_file}")
-//    compileOnly fg.deobf("curse.maven:rhino-416294:${rhino_file}")
-//    compileOnly fg.deobf("curse.maven:kubejs-forge-238086:${kubejs_file}")
+    compileOnly fg.deobf("curse.maven:architectury-forge-419699:${architectury_file}")
+    compileOnly fg.deobf("curse.maven:rhino-416294:${rhino_file}")
+    compileOnly fg.deobf("curse.maven:kubejs-forge-238086:${kubejs_file}")
 
     implementation fg.deobf("curse.maven:jade-324717:${jade_file}")
 }
