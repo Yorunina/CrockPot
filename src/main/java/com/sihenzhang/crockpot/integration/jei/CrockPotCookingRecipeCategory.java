@@ -75,8 +75,9 @@ public class CrockPotCookingRecipeCategory implements IRecipeCategory<CrockPotCo
         var maxWidth = 0;
         var drawables = cachedDrawables.getUnchecked(recipe);
         for (var drawable : drawables) {
-            if (!drawable.getInvisibleInputs().isEmpty()) {
-                builder.addInvisibleIngredients(RecipeIngredientRole.INPUT).addItemStacks(drawable.getInvisibleInputs());
+            var invisibleInputs = drawable.getInvisibleInputs();
+            if (!invisibleInputs.isEmpty()) {
+                builder.addInvisibleIngredients(RecipeIngredientRole.INPUT).addItemStacks(invisibleInputs);
             }
             if (yOffset != 2 && yOffset + drawable.getHeight() > 96) {
                 xOffset += maxWidth + 2;
