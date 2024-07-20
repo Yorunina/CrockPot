@@ -11,7 +11,7 @@
       "recipe": {
         "type": "crockpot:food_values",
         "items": [
-          "mynethersdelight:strider_rock"
+          "mynethersdelight:boiled_egg"
         ],
         "values": {
           "EGG": 1
