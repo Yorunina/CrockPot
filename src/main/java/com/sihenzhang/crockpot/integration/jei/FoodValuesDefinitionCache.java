@@ -16,6 +16,7 @@ public class FoodValuesDefinitionCache {
     }
 
     public static void regenerate(Level level) {
+        CACHE = null;
         var map = new EnumMap<FoodCategory, Set<ItemStack>>(FoodCategory.class);
         for (var category : FoodCategory.values()) {
             map.put(category, FoodValuesDefinition.getMatchedItems(category, level));
@@ -24,10 +25,6 @@ public class FoodValuesDefinitionCache {
     }
 
     public static Set<ItemStack> getMatchedItems(FoodCategory category) {
-        var result = CACHE.get(category);
-        if (result.isEmpty()) {
-            return Set.of();
-        }
-        return result;
+        return CACHE == null ? Set.of() : CACHE.get(category);
     }
 }
