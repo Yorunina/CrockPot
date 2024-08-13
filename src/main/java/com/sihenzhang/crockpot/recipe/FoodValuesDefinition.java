@@ -1,6 +1,5 @@
 package com.sihenzhang.crockpot.recipe;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.gson.JsonObject;
@@ -26,7 +25,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FoodValuesDefinition extends AbstractRecipe<Container> {
     private final Set<ResourceLocation> names;
@@ -129,15 +131,6 @@ public class FoodValuesDefinition extends AbstractRecipe<Container> {
         return builder.build();
     }
 
-    @Nonnull
-    public static List<FoodCategoryMatchedItems> getFoodCategoryMatchedItemsList(Level level) {
-        var builder = ImmutableList.<FoodCategoryMatchedItems>builder();
-        for (var category : FoodCategory.values()) {
-            builder.add(new FoodCategoryMatchedItems(category, getMatchedItems(category, level)));
-        }
-        return builder.build();
-    }
-
     @Override
     @Nonnull
     public RecipeSerializer<?> getSerializer() {
@@ -148,9 +141,6 @@ public class FoodValuesDefinition extends AbstractRecipe<Container> {
     @Nonnull
     public RecipeType<?> getType() {
         return CrockPotRecipes.FOOD_VALUES_RECIPE_TYPE.get();
-    }
-
-    public record FoodCategoryMatchedItems(FoodCategory category, Set<ItemStack> items) {
     }
 
     public static class Serializer implements RecipeSerializer<FoodValuesDefinition> {

@@ -1,0 +1,60 @@
+name: Build and Archive
+
+on:
+  push:
+    branches:
+      - 1.20.x
+      - dev-1.20.x
+  pull_request:
+    branches:
+      - dev-1.20.x
+      - 1.20.x
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: [1.20.x]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ matrix.branch }}
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'adopt'
+        java-version: '17'
+
+    - name: Cache Gradle files
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.gradle
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    - name: Cache Gradle build directory
+      uses: actions/cache@v4
+      with:
+        path: build
+        key: ${{ runner.os }}-gradle-build-${{ hashFiles('build.gradle', 'settings.gradle') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-build-
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew clean build
+
+    - name: Archive JAR file
+      if: success()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifact-${{ matrix.branch }}
+        path: build/libs/*.jar

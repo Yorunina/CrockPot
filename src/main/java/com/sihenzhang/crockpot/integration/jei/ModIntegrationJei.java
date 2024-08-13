@@ -19,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,8 +48,9 @@ public class ModIntegrationJei implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registration) {
         var level = Minecraft.getInstance().level;
         var recipeManager = level.getRecipeManager();
+        FoodValuesDefinitionCache.regenerate(level);
         registration.addRecipes(CrockPotCookingRecipeCategory.RECIPE_TYPE, recipeManager.getAllRecipesFor(CrockPotRecipes.CROCK_POT_COOKING_RECIPE_TYPE.get()).stream().filter(r -> r.getResult().getItem() != CrockPotItems.AVAJ.get()).toList());
-        registration.addRecipes(FoodValuesCategory.RECIPE_TYPE, FoodValuesDefinition.getFoodCategoryMatchedItemsList(level));
+        registration.addRecipes(FoodValuesCategory.RECIPE_TYPE, Arrays.stream(FoodCategory.values()).map(category -> new FoodValuesCategory.FoodCategoryMatchedItems(category, FoodValuesDefinitionCache.getMatchedItems(category))).toList());
         registration.addRecipes(ExplosionCraftingRecipeCategory.RECIPE_TYPE, recipeManager.getAllRecipesFor(CrockPotRecipes.EXPLOSION_CRAFTING_RECIPE_TYPE.get()));
         var meatsGroupByMonster = FoodValuesDefinition.getMatchedItems(FoodCategory.MEAT, level).stream()
                 .collect(Collectors.groupingBy(item -> FoodValuesDefinition.getFoodValues(item, Minecraft.getInstance().level).has(FoodCategory.MONSTER)));

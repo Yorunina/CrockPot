@@ -1,7 +1,7 @@
 package com.sihenzhang.crockpot.integration.jei.gui.requirement;
 
 import com.sihenzhang.crockpot.base.FoodCategory;
-import com.sihenzhang.crockpot.recipe.FoodValuesDefinition;
+import com.sihenzhang.crockpot.integration.jei.FoodValuesDefinitionCache;
 import com.sihenzhang.crockpot.recipe.cooking.requirement.RequirementCategoryMax;
 import com.sihenzhang.crockpot.util.MathUtils;
 import net.minecraft.client.Minecraft;
@@ -34,7 +34,7 @@ public class DrawableRequirementCategoryMax extends AbstractDrawableRequirement<
 
     @Override
     public List<ItemStack> getInvisibleInputs() {
-        return MathUtils.fuzzyIsZero(requirement.getMax()) ? List.of() : List.copyOf(FoodValuesDefinition.getMatchedItems(requirement.getCategory(), Minecraft.getInstance().level));
+        return MathUtils.fuzzyIsZero(requirement.getMax()) ? List.of() : List.copyOf(FoodValuesDefinitionCache.getMatchedItems(requirement.getCategory()));
     }
 
     @Override
