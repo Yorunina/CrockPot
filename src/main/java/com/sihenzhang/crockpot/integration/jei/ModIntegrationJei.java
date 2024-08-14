@@ -7,6 +7,7 @@ import com.sihenzhang.crockpot.item.CrockPotItems;
 import com.sihenzhang.crockpot.recipe.CrockPotRecipes;
 import com.sihenzhang.crockpot.recipe.FoodValuesDefinition;
 import com.sihenzhang.crockpot.tag.CrockPotBlockTags;
+import com.sihenzhang.crockpot.util.I18nUtils;
 import com.sihenzhang.crockpot.util.RLUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -61,6 +62,9 @@ public class ModIntegrationJei implements IModPlugin {
         registration.addRecipes(ParrotLayingEggsRecipeCategory.RECIPE_TYPE, parrotLayingEggsRecipes);
         registration.addRecipes(ParrotFeedingRecipeCategory.RECIPE_TYPE, recipeManager.getAllRecipesFor(CrockPotRecipes.PARROT_FEEDING_RECIPE_TYPE.get()));
         registration.addRecipes(PiglinBarteringRecipeCategory.RECIPE_TYPE, recipeManager.getAllRecipesFor(CrockPotRecipes.PIGLIN_BARTERING_RECIPE_TYPE.get()));
+
+        registration.addItemStackInfo(CrockPotItems.BIRDCAGE.get().getDefaultInstance(), I18nUtils.createIntegrationComponent("jei", "information.birdcage"));
+        registration.addItemStackInfo(CrockPotItems.CROCK_POT_UPGRADE_SMITHING_TEMPLATE.get().getDefaultInstance(), I18nUtils.createIntegrationComponent("jei", "information.pot_upgrade_smithing_template"));
     }
 
     @Override

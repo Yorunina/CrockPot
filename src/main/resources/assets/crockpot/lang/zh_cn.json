@@ -218,6 +218,8 @@
   "integration.crockpot.jei.piglin_bartering": "特殊猪灵以物易物",
   "integration.crockpot.jei.parrot_feeding": "鹦鹉喂食",
   "integration.crockpot.jei.parrot_laying_eggs": "鹦鹉生蛋",
+  "integration.crockpot.jei.information.birdcage": "可以将坐在肩膀上的鹦鹉放入鸟笼。鸟笼中的鹦鹉可以用作物或肉来喂食，也可以直接取回到肩膀上。但是，其他人的鹦鹉不能从鸟笼中直接取出。",
+  "integration.crockpot.jei.information.pot_upgrade_smithing_template": "可以在下界要塞中找到。",
   "config.jade.plugin_crockpot": "烹饪锅",
   "config.jade.plugin_crockpot.crock_pot": "烹饪锅",
   "config.jade.plugin_crockpot.birdcage": "鸟笼"
