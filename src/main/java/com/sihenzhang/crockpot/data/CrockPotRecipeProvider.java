@@ -428,7 +428,7 @@ public class CrockPotRecipeProvider extends RecipeProvider {
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("crock_pot_cooking", CrockPotItems.TROPICAL_BOUILLABAISSE.get()));
         CrockPotCookingRecipeBuilder.crockPotCooking(CrockPotItems.TURKEY_DINNER.get(), 10, 30 * 20, 0)
                 .requirementMustContainIngredient(Ingredient.of(CrockPotItemTags.RAW_CHICKEN), 2)
-                .requirementCategoryMinExclusive(FoodCategory.MEAT, 1.5F)
+                .requirementCategoryMinExclusive(FoodCategory.MEAT, 1.0F)
                 .requirementCombinationOr(new RequirementCategoryMinExclusive(FoodCategory.VEGGIE, 0.0F), new RequirementCategoryMinExclusive(FoodCategory.FRUIT, 0.0F))
                 .save(pFinishedRecipeConsumer, getSimpleRecipeName("crock_pot_cooking", CrockPotItems.TURKEY_DINNER.get()));
         CrockPotCookingRecipeBuilder.crockPotCooking(CrockPotItems.VEG_STINGER.get(), 15, 10 * 20, 0)

@@ -1,4 +1,4 @@
-// 1.20.1	2024-08-14T22:03:36.3010568	Recipes
+// 1.20.1	2024-08-15T00:02:56.9550126	Recipes
 067926577a976b8950f6d20cf4a6dccf225a8650 data/crockpot/advancements/recipes/food/campfire_cooking/cooked_egg.json
 2643ab1195cf44ddf17436324524e76b1ce7d6d0 data/crockpot/advancements/recipes/food/campfire_cooking/cooked_eggplant.json
 9e986efe7a356f3980a40472e5a1d7d619a884cb data/crockpot/advancements/recipes/food/campfire_cooking/cooked_egg_by_parrot_eggs.json
@@ -97,7 +97,7 @@ e6c52998ccd2194e90c98d2860496932f58ea3d7 data/crockpot/recipes/crock_pot_cooking
 71fdee47aeec2c4c5c75662fad892350315ec254 data/crockpot/recipes/crock_pot_cooking/taffy.json
 bd61302c11f742b90704a652c54099570b95b9be data/crockpot/recipes/crock_pot_cooking/tea.json
 0df504a385334b71414484843fb21b6038151ccf data/crockpot/recipes/crock_pot_cooking/tropical_bouillabaisse.json
-f4a4207429f7532c1beed99d623cb9cc18f41d37 data/crockpot/recipes/crock_pot_cooking/turkey_dinner.json
+cfae8549a9886aca8e2c34705b847b7f738b2906 data/crockpot/recipes/crock_pot_cooking/turkey_dinner.json
 55649e2a2ce8ed97c7105966ba99d1e7e3c972a1 data/crockpot/recipes/crock_pot_cooking/veg_stinger.json
 38cedc8fd98959d353a7d29e6bfee49f9ce34aad data/crockpot/recipes/crock_pot_cooking/volt_goat_jelly.json
 3a79c127d64c97cc435cadcdb14cc87a6a4a4c86 data/crockpot/recipes/crock_pot_cooking/watermelon_icle.json

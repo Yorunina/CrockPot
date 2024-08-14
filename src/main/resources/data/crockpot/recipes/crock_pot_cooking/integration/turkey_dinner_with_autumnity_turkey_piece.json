@@ -10,6 +10,9 @@
       ],
       "recipe": {
         "type": "crockpot:crock_pot_cooking",
+        "cookingtime": 600,
+        "potlevel": 0,
+        "priority": 10,
         "requirements": [
           {
             "type": "MUST_CONTAIN_INGREDIENT",
@@ -21,7 +24,7 @@
           {
             "type": "CATEGORY_MIN_EXCLUSIVE",
             "category": "MEAT",
-            "min": 1.5
+            "min": 1.0
           },
           {
             "type": "COMBINATION_OR",
@@ -37,10 +40,7 @@
             }
           }
         ],
-        "result": "crockpot:turkey_dinner",
-        "priority": 10,
-        "cookingtime": 800,
-        "potlevel": 0
+        "result": "crockpot:turkey_dinner"
       }
     }
   ]
