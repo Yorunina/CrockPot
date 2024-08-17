@@ -9,7 +9,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
 
-public class FoodValuesDefinitionCache {
+public final class FoodValuesDefinitionCache {
     private static Map<FoodCategory, Set<ItemStack>> CACHE;
 
     private FoodValuesDefinitionCache() {

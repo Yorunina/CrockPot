@@ -11,6 +11,7 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
+import mezz.jei.api.gui.widgets.IScrollGridWidgetFactory;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -28,10 +29,14 @@ public class PiglinBarteringRecipeCategory implements IRecipeCategory<PiglinBart
     public static final RecipeType<PiglinBarteringRecipe> RECIPE_TYPE = RecipeType.create(CrockPot.MOD_ID, "piglin_bartering", PiglinBarteringRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;
+    private final IScrollGridWidgetFactory<?> scrollGridFactory;
 
     public PiglinBarteringRecipeCategory(IGuiHelper guiHelper) {
-        this.background = guiHelper.createDrawable(RLUtils.createRL("textures/gui/jei/piglin_bartering.png"), 0, 0, 176, 112);
+        this.background = guiHelper.createDrawable(RLUtils.createRL("textures/gui/jei/piglin_bartering.png"), 0, 0, 177, 108);
         this.icon = guiHelper.createDrawable(ModIntegrationJei.ICONS, 32, 0, 16, 16);
+        var scrollGridFactory = guiHelper.createScrollGridFactory(5, 6);
+        scrollGridFactory.setPosition(70, 0);
+        this.scrollGridFactory = scrollGridFactory;
     }
 
     @Override
@@ -56,14 +61,10 @@ public class PiglinBarteringRecipeCategory implements IRecipeCategory<PiglinBart
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, PiglinBarteringRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 29, 3).setSlotName("inputSlot").addIngredients(recipe.getIngredient());
-        var weightedOutput = recipe.getWeightedResults().unwrap().stream()
+        builder.addSlot(RecipeIngredientRole.INPUT, 25, 1).setSlotName("inputSlot").addIngredients(recipe.getIngredient());
+        recipe.getWeightedResults().unwrap().stream()
                 .map(e -> NbtUtils.setLoreString(e.getData().item.getDefaultInstance(), StringUtils.formatCountAndChance(e, recipe.getWeightedResults().totalWeight)))
-                .toList();
-        var pagedItemStacks = JeiUtils.getPagedItemStacks(weightedOutput, focuses, RecipeIngredientRole.OUTPUT, 30);
-        for (var i = 0; i < pagedItemStacks.size(); i++) {
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 85 + i % 5 * 18, 3 + i / 5 * 18).addItemStacks(pagedItemStacks.get(i));
-        }
+                .forEach(stack -> builder.addSlotToWidget(RecipeIngredientRole.OUTPUT, scrollGridFactory).addItemStack(stack));
     }
 
     @Override
@@ -90,7 +91,7 @@ public class PiglinBarteringRecipeCategory implements IRecipeCategory<PiglinBart
         }
         var stack = guiGraphics.pose();
         stack.pushPose();
-        stack.translate(emptyInOffhand ? 29.0 : 37.0, 103.0, 50.0);
+        stack.translate(emptyInOffhand ? 25.0 : 33.0, 103.0, 50.0);
         stack.scale(-32.0F, 32.0F, 32.0F);
         stack.mulPose(Axis.ZP.rotationDegrees(180.0F));
         if (!emptyInOffhand) {

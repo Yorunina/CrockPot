@@ -3,9 +3,10 @@ package com.sihenzhang.crockpot.integration.jei;
 import com.sihenzhang.crockpot.CrockPot;
 import com.sihenzhang.crockpot.base.FoodCategory;
 import com.sihenzhang.crockpot.util.I18nUtils;
-import com.sihenzhang.crockpot.util.RLUtils;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.drawable.IDrawableStatic;
+import mezz.jei.api.gui.widgets.IScrollGridWidgetFactory;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -14,17 +15,25 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.List;
 import java.util.Set;
 
 public class FoodValuesCategory implements IRecipeCategory<FoodValuesCategory.FoodCategoryMatchedItems> {
     public static final RecipeType<FoodValuesCategory.FoodCategoryMatchedItems> RECIPE_TYPE = RecipeType.create(CrockPot.MOD_ID, "food_values", FoodValuesCategory.FoodCategoryMatchedItems.class);
+    private final int WIDTH = 178;
+    private final int HEIGHT = 110;
+
     private final IDrawable background;
     private final IDrawable icon;
+    private final IDrawableStatic slotDrawable;
+    private final IScrollGridWidgetFactory<?> scrollGridFactory;
 
     public FoodValuesCategory(IGuiHelper guiHelper) {
-        this.background = guiHelper.createDrawable(RLUtils.createRL("textures/gui/jei/food_values.png"), 0, 0, 166, 117);
+        this.background = guiHelper.createBlankDrawable(WIDTH, HEIGHT);
         this.icon = guiHelper.createDrawable(ModIntegrationJei.ICONS, 16, 0, 16, 16);
+        this.slotDrawable = guiHelper.getSlotDrawable();
+        var scrollGridFactory = guiHelper.createScrollGridFactory(9, 5);
+        scrollGridFactory.setPosition((WIDTH - scrollGridFactory.getArea().width()) / 2, 20);
+        this.scrollGridFactory = scrollGridFactory;
     }
 
     @Override
@@ -49,11 +58,10 @@ public class FoodValuesCategory implements IRecipeCategory<FoodValuesCategory.Fo
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, FoodValuesCategory.FoodCategoryMatchedItems recipe, IFocusGroup focuses) {
-        var pagedItemStacks = JeiUtils.getPagedItemStacks(List.copyOf(recipe.items()), focuses, RecipeIngredientRole.INPUT, 45);
-        for (var i = 0; i < pagedItemStacks.size(); i++) {
-            builder.addSlot(RecipeIngredientRole.INPUT, 3 + i % 9 * 18, 26 + i / 9 * 18).addItemStacks(pagedItemStacks.get(i));
-        }
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 75, 3).addItemStack(FoodCategory.getItemStack(recipe.category()));
+        recipe.items().forEach(stack -> builder.addSlotToWidget(RecipeIngredientRole.INPUT, scrollGridFactory).addItemStack(stack));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, (WIDTH - slotDrawable.getWidth()) / 2 + 1, 1)
+                .addItemStack(FoodCategory.getItemStack(recipe.category()))
+                .setBackground(slotDrawable, -1, -1);
     }
 
     public record FoodCategoryMatchedItems(FoodCategory category, Set<ItemStack> items) {
