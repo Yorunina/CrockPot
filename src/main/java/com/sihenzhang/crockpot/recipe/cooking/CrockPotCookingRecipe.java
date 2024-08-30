@@ -16,6 +16,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -28,6 +29,7 @@ import java.util.stream.IntStream;
 
 public class CrockPotCookingRecipe extends AbstractRecipe<CrockPotCookingRecipe.Wrapper> {
     private static final RandomSource RANDOM = RandomSource.create();
+    public static final String NBT_PATH_BASE_SCORE = "baseScore";
 
     private final List<IRequirement> requirements;
     private final ItemStack result;
@@ -53,7 +55,20 @@ public class CrockPotCookingRecipe extends AbstractRecipe<CrockPotCookingRecipe.
 
     @Override
     public ItemStack assemble(CrockPotCookingRecipe.Wrapper pContainer, RegistryAccess pRegistryAccess) {
-        return result.copy();
+        int containerSize = pContainer.getContainerSize();
+        ItemStack resultItem = result.copy();
+        int baseScore = 0;
+        for (int i = 0; i < containerSize; i++) {
+            ItemStack slotItem = pContainer.getItem(i);
+            if (slotItem.getCount() > 0 && slotItem.hasTag() && slotItem.getTag().contains(NBT_PATH_BASE_SCORE)) {
+                baseScore = baseScore + slotItem.getTag().getInt(NBT_PATH_BASE_SCORE);
+            }
+        }
+        if (baseScore > 0) {
+            baseScore = RANDOM.nextInt(3) + baseScore;
+            resultItem.getOrCreateTag().putInt(NBT_PATH_BASE_SCORE, baseScore);
+        }
+        return resultItem;
     }
 
     public static Optional<CrockPotCookingRecipe> getRecipeFor(CrockPotCookingRecipe.Wrapper container, Level level) {
