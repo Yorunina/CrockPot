@@ -60,7 +60,7 @@ public class CrockPotCookingRecipe extends AbstractRecipe<CrockPotCookingRecipe.
         int baseScore = 0;
         for (int i = 0; i < containerSize; i++) {
             ItemStack slotItem = pContainer.getItem(i);
-            if (slotItem.getCount() > 0 && slotItem.hasTag() && slotItem.getTag().contains(NBT_PATH_BASE_SCORE)) {
+            if (!slotItem.isEmpty() && slotItem.hasTag() && slotItem.getTag().contains(NBT_PATH_BASE_SCORE)) {
                 baseScore = baseScore + slotItem.getTag().getInt(NBT_PATH_BASE_SCORE);
             }
         }
